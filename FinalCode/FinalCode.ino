@@ -20,7 +20,7 @@ void setup()
   delay(2000);
   Wire.begin(21, 22);
 
-  //OLED SH1106
+  //Écran OLED SH1106 
   if (!display.begin(SCREEN_ADDRESS, true)) 
   {
     Serial.println("OLED SH1106 non trouvé !");
@@ -30,7 +30,7 @@ void setup()
   display.setTextColor(SH110X_WHITE);
   display.setTextSize(1);
   display.setCursor(20, 24);
-  display.println("Station Météo");
+  display.println("Station meteo");
   display.display();
   delay(1500);
 
@@ -97,7 +97,7 @@ void loop()
   //Température
   display.setTextSize(1);
   display.setCursor(0, 0);
-  display.print("Temp :");
+  display.print("Degres :");
   display.setTextSize(2);
   display.setCursor(52, 0);
   display.print(temp, 1);
@@ -106,7 +106,7 @@ void loop()
   //Pression
   display.setTextSize(1);
   display.setCursor(0, 18);
-  display.print("Pres : ");
+  display.print("Pression : ");
   display.print(pres, 1);
   display.print(" hPa");
 
@@ -123,7 +123,7 @@ void loop()
   //Qualité de l'air
   display.setTextSize(1);
   display.setCursor(0, 52);
-  display.print("Qualité de l'air : ");
+  display.print("Qlt air : ");
   display.print(qualite);
 
   display.display();
