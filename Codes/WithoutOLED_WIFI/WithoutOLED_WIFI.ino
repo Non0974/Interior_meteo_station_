@@ -113,10 +113,6 @@ void setup() {
   Serial.print("Connecte ! Adresse a taper sur le telephone : http://");
   Serial.println(WiFi.localIP());
 
-  if (MDNS.begin("stationmeteo")) {
-    Serial.println("Ou bien : http://stationmeteo.local");
-  }
-
   server.on("/", handleRoot);
   server.on("/data", handleData);
   server.begin();
